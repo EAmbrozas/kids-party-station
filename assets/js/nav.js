@@ -1,25 +1,46 @@
-// Function to add 'active' class to the nav link corresponding to the current section
-function updateNavLinks() {
-    const sections = document.querySelectorAll('section');
+document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
 
-    let current = '';
+    function updateActiveNavLink() {
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+        this.classList.add('active');
+    }
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-            current = section.getAttribute('id');
-        }
+    navLinks.forEach(link => {
+        link.addEventListener('click', updateActiveNavLink);
     });
 
-    navLinks.forEach(navLink => {
-        navLink.classList.remove('active');
-        if (navLink.getAttribute('href').includes(current)) {
-            navLink.classList.add('active');
-        }
-    });
-}
+    function updateNavLinksOnScroll() {
+        let current = '';
 
-// Listen for scroll events
-window.addEventListener('scroll', updateNavLinks);
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= (sectionTop - window.innerHeight / 2) &&
+                window.pageYOffset < (sectionTop + sectionHeight - window.innerHeight / 2)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
+            current = 'contact';
+        }
+
+        navLinks.forEach(navLink => {
+            navLink.classList.remove('active');
+            if (navLink.getAttribute('href').includes(current)) {
+                navLink.classList.add('active');
+            }
+        });
+    }
+
+    const homeLink = document.querySelector('.nav-link[href="#home"]');
+    if (homeLink) {
+        homeLink.classList.add('active');
+    }
+
+    window.addEventListener('scroll', updateNavLinksOnScroll);
+});
