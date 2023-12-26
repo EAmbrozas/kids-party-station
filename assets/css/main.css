@@ -237,6 +237,7 @@
     justify-content: center;
     width: 160px;
     gap: 10px;
+    margin-bottom: 40px;
 }
 
 .event i {
