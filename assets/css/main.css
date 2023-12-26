@@ -11,6 +11,7 @@
 :root {
     --primary: #41D0FE; /* Replace with your primary color */
     --secondary: #EFCB79; /* Replace with your secondary color */
+    --dark: #000B16; /* Replace with your dark color */
 }
 
 .container {
@@ -523,5 +524,82 @@
 @media (max-width: 992px) {
     .gallery-item {
         width: calc(50% - 10px);
+    }
+}
+
+/*
+-----------------------------------------------------------------------
+  Footer
+-----------------------------------------------------------------------
+*/
+.footer-container {
+   width: 100%;
+   background-color: var(--dark);
+}
+
+.map-container {
+    width: 100%;
+    height: 300px;
+}
+
+.footer-container .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.contact-info {
+    width: 40%;
+}
+
+.contact-info p,
+.footer-container h4 {
+    color: whitesmoke;
+}
+
+.footer-container h4 {
+    text-align: center;
+}
+
+.footer-social-links {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-social-links a {
+    color: whitesmoke;
+    padding: 10px
+}
+
+.copyright {
+    background-color: var(--dark);
+    padding: 15px 0;
+}
+
+.copyright p {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+    color: whitesmoke;
+    font-weight: lighter;
+}
+
+/* Footer Section Media */
+@media (max-width: 767px) {
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .footer-container .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
     }
 }
