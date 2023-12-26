@@ -99,10 +99,29 @@
 
 .top-right {
     top: -100px;
-    right: 50px;
+    right: 0;
 }
 
 .bottom-left {
     bottom: -100px;
-    left: 50px;
+    left: 0;
+}
+
+/* Media */
+@media (max-width: 414px) {
+    .logo {
+        width: 150px;
+    }
+
+    .main-header {
+        font-size: 36px;
+    }
+
+    .top-right {
+        right: -30px;
+    }
+    
+    .bottom-left {
+        left: -30px;
+    }
 }
