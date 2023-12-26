@@ -281,6 +281,7 @@
     color: var(--secondary);
     margin-bottom: 35px;
     left: -100px;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 1);
 }
 
 .about-image {
@@ -407,4 +408,73 @@
         filter: blur(100px);
     }
     
+}
+
+/*
+-----------------------------------------------------------------------
+  Pricing Section
+-----------------------------------------------------------------------
+*/
+.pricing-section {
+    width: 100%;
+    background-image: url(../images/pricing-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+.pricing-background {
+    background-color: rgba(0, 0, 0, 0.500);
+    height: 100%;
+    width: 100%;
+}
+
+.pricing-header {
+    font-size: 50px;
+    color: var(--secondary);
+    margin-bottom: 35px;
+    text-align: center;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 1);
+    text-transform: uppercase;
+}
+
+.pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.pricing-card {
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+}
+
+.sub-title {
+    color: var(--secondary);
+    margin: 0;
+}
+
+.title {
+    color: var(--primary);
+    margin: 0;
+}
+
+.description {
+    color: whitesmoke;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.additional {
+    color: whitesmoke;
+    margin-bottom: 20px;
 }
