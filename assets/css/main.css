@@ -46,6 +46,10 @@
     gap: 50px;
 }
 
+.logo {
+    z-index: 1;
+}
+
 .main-header {
     color: var(--secondary);
     text-transform: uppercase;
@@ -125,13 +129,5 @@
 
     .social-link {
         font-size: 24px;
-    }
-
-    .top-right {
-        right: -30px;
-    }
-    
-    .bottom-left {
-        left: -30px;
     }
 }
