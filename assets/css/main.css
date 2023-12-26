@@ -1,2 +1,108 @@
 /* Font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Colors */
+:root {
+    --primary: #41D0FE; /* Replace with your primary color */
+    --secondary: #EFCB79; /* Replace with your secondary color */
+}
+
+/*
+-----------------------------------------------------------------------
+  Hero Section
+-----------------------------------------------------------------------
+*/
+.hero-section {
+    height: 100vh;
+    width: 100%;
+    background-image: url(../images/hero-background.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-background {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section .hero-background .container {
+    height: 100vh;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.main-header {
+    color: var(--secondary);
+    text-transform: uppercase;
+    font-size: 62px;
+    max-width: 650px;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 1);
+    text-align: center;
+}
+
+.social-links {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+.social-links::before,
+.social-links::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 1px;
+    background: var(--primary);
+}
+
+.social-links::before {
+    left: -60px;
+}
+
+.social-links::after {
+    right: -60px;
+}
+
+.social-link {
+    margin: 0 5px;
+    font-size: 40px;
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--secondary);
+}
+
+.floating-image {
+    position: absolute;
+    width: 150px;
+    transition: transform 2s ease;
+}
+
+.top-right {
+    top: -100px;
+    right: 50px;
+}
+
+.bottom-left {
+    bottom: -100px;
+    left: 50px;
+}
