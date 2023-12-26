@@ -109,12 +109,22 @@
 
 /* Media */
 @media (max-width: 414px) {
+    .hero-section .hero-background .container {
+        justify-content: flex-start;
+        padding-top: 50px;
+        gap: 40px;
+    }
+
     .logo {
         width: 150px;
     }
 
     .main-header {
-        font-size: 36px;
+        font-size: 32px;
+    }
+
+    .social-link {
+        font-size: 24px;
     }
 
     .top-right {
