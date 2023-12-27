@@ -309,9 +309,10 @@ body {
 
 .about-content p {
     color: whitesmoke;
-    letter-spacing: 2px;
     line-height: 25px;
     margin-bottom: 35px;
+    letter-spacing: 1px;
+    font-weight: 200;
 }
 
 .book-now {
