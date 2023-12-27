@@ -119,6 +119,7 @@ body {
 
 .logo {
     z-index: 1;
+    width: 160px;
 }
 
 .main-header {
@@ -181,6 +182,12 @@ body {
 }
 
 /* Hero Section Media */
+@media (max-width: 992px) {
+    .logo {
+        width: 100px;
+    }
+}
+
 @media (max-width: 414px) {
     .hero-section {
         background-image: url(../images/hero-background-mobile.JPG);
@@ -189,10 +196,6 @@ body {
     .hero-section .hero-background .container {
         justify-content: flex-start;
         gap: 40px;
-    }
-
-    .logo {
-        width: 150px;
     }
 
     .social-link {
