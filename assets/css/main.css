@@ -577,11 +577,11 @@ body {
 }
 
 .contact-info p,
-.footer-container h4 {
+.footer-container h3 {
     color: whitesmoke;
 }
 
-.footer-socials h4 {
+.footer-socials h3 {
     text-align: center;
 }
 
@@ -621,7 +621,7 @@ body {
         width: 100%;
     }
 
-    .footer-container h4 {
+    .footer-container h3 {
         text-align: center;
     }
 
