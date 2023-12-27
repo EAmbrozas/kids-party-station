@@ -241,7 +241,8 @@ body {
     justify-content: center;
     width: 160px;
     gap: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .event i {
@@ -252,6 +253,7 @@ body {
 .event p {
     color: var(--secondary);
     text-transform: uppercase;
+    margin-bottom: 0;
 }
 
 /* Events Section Media */
@@ -269,7 +271,6 @@ body {
 */
 .about-section {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 100%, rgba(0, 11, 22, 1) 100%);
-    padding: 50px 0;
 }
 
 .about-container {
