@@ -16,25 +16,25 @@ document.addEventListener("DOMContentLoaded", function () {
     // Scroll event handler
     function onScroll() {
         let currentId = '';
+        let atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight;
 
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const threshold = window.pageYOffset + window.innerHeight * 0.25;
-
-            if (sectionTop <= threshold) {
-                currentId = section.getAttribute('id');
-            }
-        });
-
-        if (currentId) {
-            setActiveLink(currentId);
-        }
-
-        const bodyHeight = document.body.offsetHeight;
-        if (window.innerHeight + window.pageYOffset >= bodyHeight) {
-            navbar.style.display = 'none';
+        if (atBottom) {
+            // If at the bottom of the page, set the contact link as active
+            setActiveLink('contact');
         } else {
-            navbar.style.display = 'flex';
+            // Otherwise, determine the active section based on scroll position
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const threshold = window.pageYOffset + window.innerHeight * 0.25;
+
+                if (sectionTop <= threshold) {
+                    currentId = section.getAttribute('id');
+                }
+            });
+
+            if (currentId) {
+                setActiveLink(currentId);
+            }
         }
     }
 
