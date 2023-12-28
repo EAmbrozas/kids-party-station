@@ -75,10 +75,6 @@ body {
     box-shadow: 0 0 10px var(--primary);
 }
 
-.hidden-nav {
-    display: none;
-}
-
 /*
 -----------------------------------------------------------------------
   Hero Section
