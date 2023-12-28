@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
+    const navbar = document.querySelector('.navbar');
 
     function updateActiveNavLink() {
         navLinks.forEach(link => {
@@ -27,6 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
             current = 'contact';
+            navbar.classList.add('hidden-nav');
+        } else {
+            navbar.classList.remove('hidden-nav');
         }
 
         navLinks.forEach(navLink => {
@@ -42,5 +46,5 @@ document.addEventListener('DOMContentLoaded', function () {
         homeLink.classList.add('active');
     }
 
-    window.addEventListener('scroll', updateNavLinksOnScroll);
+    window.addEventListener('scroll', updateNavLinksOnScroll, { passive: true });
 });
