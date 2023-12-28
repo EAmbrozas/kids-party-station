@@ -469,6 +469,17 @@ body {
     width: 100%;
 }
 
+.pricing-background .container > P {
+    text-align: center;
+    color: whitesmoke;
+}
+
+.pricing-background .container > p i {
+    color: var(--primary);
+    font-size: 18px;
+    margin-right: 10px;
+}
+
 .pricing-header {
     color: var(--secondary);
     margin-bottom: 35px;
