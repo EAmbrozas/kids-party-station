@@ -24,17 +24,15 @@ document.addEventListener('DOMContentLoaded', function () {
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
-            const sectionMiddle = sectionTop + sectionHeight / 2; // Calculate the middle of the section
-            const scrollPosition = window.pageYOffset + window.innerHeight / 2; // Middle of the viewport
+            const scrollPosition = window.pageYOffset + window.innerHeight / 2;
 
-            // Check if the middle of the viewport is within the middle half of the section
             if (scrollPosition > sectionTop + sectionHeight * 0.25 && scrollPosition < sectionTop + sectionHeight * 0.75) {
                 currentId = section.getAttribute('id');
             }
         });
 
-        // Check if the user has scrolled to the bottom of the page
-        if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight && currentId !== 'contact') {
+        // Adjusted condition for detecting if the user is near the bottom of the page
+        if ((window.innerHeight + window.pageYOffset) >= (document.body.offsetHeight - 100) && currentId !== 'contact') {
             currentId = 'contact';
         }
 
