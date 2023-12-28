@@ -75,6 +75,19 @@ body {
     box-shadow: 0 0 10px var(--primary);
 }
 
+/* Nav Media */
+@media (max-width: 992px) {
+    .navbar {
+        bottom: 4.5%;
+    }
+}
+
+@media (max-width: 414px) {
+    .navbar {
+        bottom: 5%;
+    }
+}
+
 /*
 -----------------------------------------------------------------------
   Hero Section
@@ -187,6 +200,7 @@ body {
     .hero-section .hero-background .container {
         justify-content: flex-start;
         gap: 40px;
+        padding-top: 100px;
     }
 
     .social-link {
