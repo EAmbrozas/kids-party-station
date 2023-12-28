@@ -63,10 +63,9 @@ body {
 }
 
 .nav-link:hover {
-    background-color: var(--primary);
-    color: white;
-    border: 1px solid white;
-    box-shadow: 0 0 10px var(--primary);
+    color: var(--primary);
+    background-color: transparent;
+    border: 1px solid var(--primary);
 }
 
 .nav-link.active {

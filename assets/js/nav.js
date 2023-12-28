@@ -1,50 +1,55 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
     const navbar = document.querySelector('.navbar');
 
-    function updateActiveNavLink() {
+    // Function to set the active link based on the section ID
+    function setActiveLink(newActiveId) {
         navLinks.forEach(link => {
             link.classList.remove('active');
+            if (link.href.includes(newActiveId)) {
+                link.classList.add('active');
+            }
         });
-        this.classList.add('active');
     }
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', updateActiveNavLink);
-    });
-
-    function updateNavLinksOnScroll() {
-        let current = '';
+    // Scroll event handler
+    function onScroll() {
+        let currentId = '';
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.pageYOffset >= (sectionTop - window.innerHeight / 2) &&
-                window.pageYOffset < (sectionTop + sectionHeight - window.innerHeight / 2)) {
-                current = section.getAttribute('id');
+            const threshold = window.pageYOffset + window.innerHeight * 0.25;
+
+            if (sectionTop <= threshold) {
+                currentId = section.getAttribute('id');
             }
         });
 
-        if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
-            current = 'contact';
-            navbar.classList.add('hidden-nav');
-        } else {
-            navbar.classList.remove('hidden-nav');
+        if (currentId) {
+            setActiveLink(currentId);
         }
 
-        navLinks.forEach(navLink => {
-            navLink.classList.remove('active');
-            if (navLink.getAttribute('href').includes(current)) {
-                navLink.classList.add('active');
-            }
+        const bodyHeight = document.body.offsetHeight;
+        if (window.innerHeight + window.pageYOffset >= bodyHeight) {
+            navbar.style.display = 'none';
+        } else {
+            navbar.style.display = 'flex';
+        }
+    }
+
+    // Add click event listeners to nav links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            // Remove active class from all links and set it on the clicked link
+            navLinks.forEach(lnk => lnk.classList.remove('active'));
+            link.classList.add('active');
         });
-    }
+    });
 
-    const homeLink = document.querySelector('.nav-link[href="#home"]');
-    if (homeLink) {
-        homeLink.classList.add('active');
-    }
+    // Attach the scroll event listener
+    window.addEventListener('scroll', onScroll);
 
-    window.addEventListener('scroll', updateNavLinksOnScroll, { passive: true });
+    // Call onScroll immediately to set initial active state
+    onScroll();
 });
