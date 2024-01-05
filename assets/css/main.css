@@ -463,7 +463,8 @@ body {
     background-position: center top;
 }
 
-.pricing-background {
+.pricing-background,
+.reviews-background {
     background-color: rgba(0, 0, 0, 0.300);
     height: 100%;
     width: 100%;
@@ -480,7 +481,8 @@ body {
     margin-right: 10px;
 }
 
-.pricing-header {
+.pricing-header,
+.reviews-header {
     color: var(--secondary);
     margin-bottom: 35px;
     text-align: center;
@@ -528,6 +530,85 @@ body {
     color: whitesmoke;
     margin-bottom: 20px;
 }
+
+/* Pricing Section Media */
+@media (max-width: 767px) {
+    .pricing-section {
+        width: 100%;
+        background-image: url(../images/pricing-background.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+}
+
+/* Reviews */
+.reviews-container {
+    display: flex;
+    overflow-x: hidden;
+    gap: 20px;
+    scroll-behavior: smooth;
+    margin-bottom: -20px;
+    padding-bottom: 20px;
+}
+
+.review-item {
+    flex: 0 0 auto;
+    max-width: 415px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+}
+
+.review-text {
+    color: whitesmoke;
+    font-style: italic;
+}
+
+.review-author {
+    text-align: right;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.scroll-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.scroll-left, .scroll-right {
+    background: var(--primary);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.scroll-left:hover, .scroll-right:hover {
+    background: var(--secondary);
+}
+
+/* Hide scrollbar for specific browsers */
+.reviews-container::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+.reviews-container {
+    -ms-overflow-style: none;  /* for IE and Edge */
+    scrollbar-width: none;  /* for Firefox */
+}
+
+/*Reviews Section Media*/
+@media (max-width: 414px) {
+    .review-item {
+        max-width: 100%;
+    }
+}
+
 
 /*
 -----------------------------------------------------------------------
@@ -678,84 +759,5 @@ h2 {
     }
     h2 {
         font-size: 32px;
-    }
-}
-
-/*
------------------------------------------------------------------------
-  Reviews Section
------------------------------------------------------------------------
-*/
-.reviews-section {
-    background-color: #f5f5f5;
-}
-
-.reviews-header {
-    text-align: center;
-    color: var(--dark);
-    margin-bottom: 35px;
-}
-
-.reviews-container {
-    display: flex;
-    overflow-x: hidden;
-    gap: 20px;
-    scroll-behavior: smooth;
-    margin-bottom: -20px;
-    padding-bottom: 20px;
-}
-
-.review-item {
-    flex: 0 0 auto;
-    max-width: 415px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.review-text {
-    color: var(--dark);
-    font-style: italic;
-}
-
-.review-author {
-    text-align: right;
-    color: var(--primary);
-    font-weight: bold;
-}
-
-.scroll-buttons {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.scroll-left, .scroll-right {
-    background: var(--primary);
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.scroll-left:hover, .scroll-right:hover {
-    background: var(--secondary);
-}
-
-/* Hide scrollbar for specific browsers */
-.reviews-container::-webkit-scrollbar {
-    display: none; /* for Chrome, Safari, and Opera */
-}
-
-.reviews-container {
-    -ms-overflow-style: none;  /* for IE and Edge */
-    scrollbar-width: none;  /* for Firefox */
-}
-
-/*Reviews Section Media*/
-@media (max-width: 414px) {
-    .review-item {
-        max-width: 100%;
     }
 }
